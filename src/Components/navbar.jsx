@@ -139,7 +139,7 @@ function Navbar() {
                   data-bs-target="#signUpModal"
                   onClick={clearField}
                 >
-                  Signup
+                  Register
                 </a>
               </li>
               <li>
@@ -175,13 +175,13 @@ function Navbar() {
                 className="col-6 p-3 text-decoration-none text-body border-bottom border-4"
                 style={{ backgroundColor: "#eaeaea" }}
               >
-                <h3>Sign up</h3>
+                <h5 className="mb-0">Register</h5>
               </a>
               <a
                 className="col-6 p-3 text-decoration-none text-body border-bottom border-4 border-warning"
                 href="#"
               >
-                <h3>Login</h3>
+                <h5 className="mb-0">Login</h5>
               </a>
             </div>
             <div class="modal-body">
@@ -205,8 +205,8 @@ function Navbar() {
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-lg btn-primary">
-                Login
+              <button type="button" class="btn btn-lg btn-primary py-2 px-3">
+                <p className="d-inline fw-bold small">Login</p>
               </button>
             </div>
           </div>
@@ -228,7 +228,7 @@ function Navbar() {
                 href="#"
                 className="col-6 p-3 text-decoration-none text-body border-bottom border-4 border-warning"
               >
-                <h3>Sign up</h3>
+                <h5 className="mb-0">Register</h5>
               </a>
               <a
                 className="col-6 p-3 text-decoration-none text-body border-bottom border-4"
@@ -237,7 +237,7 @@ function Navbar() {
                 data-bs-target="#loginModal"
                 style={{ backgroundColor: "#eaeaea" }}
               >
-                <h3>Login</h3>
+                <h5 className="mb-0">Login</h5>
               </a>
             </div>
             <form onSubmit={handleSignUpSubmission}>
@@ -305,7 +305,7 @@ function Navbar() {
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-lg btn-primary">
-                  Sign Up
+                  <p className="d-inline fw-bold small">Register</p>
                 </button>
               </div>
             </form>

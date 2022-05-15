@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Navbar from "./navbar";
-import Footer from "./footer";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 
 function Details() {
   const [movie, setMovie] = useState({});
@@ -15,17 +13,23 @@ function Details() {
     async function fetchData() {
       console.log(id);
       let response = await axios.get(
-        "https://api.themoviedb.org/3/movie/" + id + "?api_key=87b82e1ce0bcea0c95a22cdc1e04617e"
+        "https://api.themoviedb.org/3/movie/" +
+          id +
+          "?api_key=87b82e1ce0bcea0c95a22cdc1e04617e"
       );
       setMovie(response["data"]);
 
       let response2 = await axios.get(
-        "https://api.themoviedb.org/3/movie/" + id + "/credits?api_key=87b82e1ce0bcea0c95a22cdc1e04617e"
+        "https://api.themoviedb.org/3/movie/" +
+          id +
+          "/credits?api_key=87b82e1ce0bcea0c95a22cdc1e04617e"
       );
       setCast(response2["data"]["cast"]);
- 
+
       let response3 = await axios.get(
-        "https://api.themoviedb.org/3/movie/" + id + "/similar?api_key=87b82e1ce0bcea0c95a22cdc1e04617e&language=en-US&page=1"
+        "https://api.themoviedb.org/3/movie/" +
+          id +
+          "/similar?api_key=87b82e1ce0bcea0c95a22cdc1e04617e&language=en-US&page=1"
       );
       setSimilar(response3["data"]["results"]);
       console.log(response);
@@ -45,8 +49,6 @@ function Details() {
         }
       );
       setRating(response["data"].rating);
-
-
     }
     fetchData();
   }, []);
@@ -136,6 +138,30 @@ function Details() {
                 </a>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+      {/* Reviews */}
+      <div className="container">
+        <hr className=" my-4"></hr>
+        <h4 className="text-center mt-4 mb-4">
+          <i class="bi bi-star-fill mx-2 icon-yellow"></i>Movie Reviews
+        </h4>
+        <div class="card dark-card">
+          <div class="card-body">
+            <h5 class="card-title">Zain Sajid</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <i class="bi bi-star-fill me-2 icon-yellow"></i>5/10
+            </h6>
+            <p class="card-text">
+              The bad; sentimental storyline with no real intense drama to speak
+              of, because everything in this movie is so safe and predictable.
+              You know from the beginning this is the dude who is gonna be
+              successfull in sports and on the way to his great success his wife
+              is crying alot from time to time, about whatever. And if she aint
+              crying she is looking like she is selling hallmark christmas
+              cards.
+            </p>
           </div>
         </div>
       </div>

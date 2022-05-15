@@ -5,7 +5,6 @@ import reportWebVitals from "./reportWebVitals";
 import Homepage from "./Components/homepage";
 import Details from "./Components/details";
 import Watchlist from "./Components/watchlist";
-import MovieRow from "./Components/movierow";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/navbar";
 import Footer from "./Components/footer";
