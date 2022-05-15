@@ -18,19 +18,21 @@ function Watchlist() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-12">
-          <h3 className="mt-4 mb-0 fw-bold">Your Watchlist</h3>
-        </div>
-        <hr className="my-4"></hr>
-        <div className="row">
-          {wishList.slice(5, 11).map((e) => (
-            <MovieRow movie={e} />
-          ))}
+    <>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12">
+            <h3 className="mt-4 mb-0 fw-bold">Your Watchlist</h3>
+          </div>
+          <hr className="my-4"></hr>
+          <div className="row">
+            {wishList.slice(5, 11).map((e) => (
+              <MovieRow movie={e} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -23,9 +23,9 @@ function MovieRow(props) {
 
   return (
     <>
-      <div className="col-12 mb-4 p-0">
+      <a href={"/details/" + movie.id} className="col-12 mb-4 p-0 text-decoration-none text-white ">
         <div
-          className="row py-2 rounded"
+          className="row py-2 rounded changeOpacity"
           style={{ backgroundColor: "#1b1f23" }}
         >
           <div className="col-lg-2 col-md-3 col-sm-4 col-5 p-0 d-flex justify-content-center">
@@ -35,6 +35,7 @@ function MovieRow(props) {
                 maxHeight: "200px",
               }}
               className="p-3"
+              alt={movie.title}
             ></img>
           </div>
           <div className="col-lg-10 col-md-9 col-sm-8 col-7 my-auto ps-0 pe-4">
@@ -53,7 +54,7 @@ function MovieRow(props) {
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </>
   );
 }

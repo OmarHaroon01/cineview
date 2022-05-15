@@ -9,6 +9,7 @@ import MovieRow from "./Components/movierow";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/navbar";
 import Footer from "./Components/footer";
+import Search from "./Components/search";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route exact path="/" element={<Homepage />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/watchlist" element={<Watchlist />} />
+        <Route path="/search/:value" element={<Search />} />
       </Routes>
       <Footer />
     </BrowserRouter>

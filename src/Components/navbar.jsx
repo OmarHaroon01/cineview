@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 
 function Navbar() {
   // For SignUp
@@ -12,6 +12,24 @@ function Navbar() {
   const [passwordErrorClass, setPasswordErrorClass] = useState("none");
   const [confirmPasswordErrorClass, setConfirmPasswordErrorClass] =
     useState("none");
+
+  //For Search
+  const [searchText, setSearchText] = useState("");
+  const [navigateToSearch, setNavigateToSearch] = useState(false);
+
+
+  function handleSearch(e) {
+    e.preventDefault();
+    if (searchText) {
+      setNavigateToSearch(true);
+    }
+  }
+
+  if (navigateToSearch) {
+    console.log(searchText);
+    // return <Navigate to={"/search/" + searchText}/>;
+    window.location.href = 'http://localhost:3000/search/' + searchText;
+  }
 
   const validateEmail = () => {
     return String(email)
@@ -88,12 +106,14 @@ function Navbar() {
             className="collapse navbar-collapse justify-content-end"
             id="navbarNav"
           >
-            <form className="d-flex me-2">
+            <form className="d-flex me-2" onSubmit={handleSearch}>
               <input
                 className="form-control me-2"
                 type="search"
+                value={searchText}
                 placeholder="Search"
                 aria-label="Search"
+                onInput={(e) => setSearchText(e.target.value)}
               ></input>
               <button className="btn btn-primary" type="submit">
                 <i className="bi bi-search"></i>
@@ -107,9 +127,9 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item me-2">
-                <Link to="watchlist" className="nav-link">
+                <a href="/watchlist" className="nav-link">
                   Watchlist
-                </Link>
+                </a>
               </li>
               <li>
                 <a
