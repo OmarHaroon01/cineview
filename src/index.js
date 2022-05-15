@@ -18,7 +18,7 @@ ReactDOM.render(
         <Route exact path="/" element={<Homepage />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/watchlist" element={<Watchlist />} />
-        <Route path="/search/:value" element={<Search />} />
+        <Route path="/search/" element={<Search />} />
       </Routes>
       <Footer />
     </BrowserRouter>

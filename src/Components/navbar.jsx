@@ -17,7 +17,6 @@ function Navbar() {
   const [searchText, setSearchText] = useState("");
   const [navigateToSearch, setNavigateToSearch] = useState(false);
 
-
   function handleSearch(e) {
     e.preventDefault();
     if (searchText) {
@@ -28,7 +27,7 @@ function Navbar() {
   if (navigateToSearch) {
     console.log(searchText);
     // return <Navigate to={"/search/" + searchText}/>;
-    window.location.href = 'http://localhost:3000/search/' + searchText;
+    window.location.href = "http://localhost:3000/search/";
   }
 
   const validateEmail = () => {
@@ -106,13 +105,18 @@ function Navbar() {
             className="collapse navbar-collapse justify-content-end"
             id="navbarNav"
           >
-            <form className="d-flex me-2" onSubmit={handleSearch}>
+            <form
+              className="d-flex me-2"
+              action="http://localhost:3000/search/"
+            >
               <input
                 className="form-control me-2"
                 type="search"
                 value={searchText}
                 placeholder="Search"
                 aria-label="Search"
+                name="query"
+                required="true"
                 onInput={(e) => setSearchText(e.target.value)}
               ></input>
               <button className="btn btn-primary" type="submit">

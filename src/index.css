@@ -70,3 +70,9 @@ code {
   background-repeat: no-repeat;
   background-position: right center; */
 }
+
+.spinner-size {
+  width: 10rem; 
+  height: 10rem;
+  border-width: 1rem;
+}
